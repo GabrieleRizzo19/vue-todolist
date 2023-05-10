@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Vue To Do List</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <title>Vue To Do List</title>
+    </head>
+    <body>
+
+        <div id="app">
+
+            <div class="container">
+                <h1>To Do List</h1>
+                <div>
+                    <input type="text" v-model="taskInput.text" placeholder="Inserisci cose da fare" @keyup.enter="addTask()">
+                    <button @click="addTask()">Aggiungi</button>
+
+                </div>
     
-    <script src="./assets/js/vue-global-3-2-47.js"></script>
-    <script src="./assets/js/main.js"></script>
-</body>
+                <ul>
+                    <li v-for="(item,i) in toDoList" :class="item.done ? 'done' : 'undone' " >
+                        {{ item.text }}
+                        <button @click="changeState(i)" :class="item.done ? 'setUndone' : 'setDone' ">{{ item.done ? 'Segna come non fatto' : 'Segna come fatto' }}</button>
+                        <button @click="removeTask(i)">ELIMINA</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+
+        
+
+        <script src="./assets/js/vue-global-3-2-47.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>

@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    height: 2em;
+}
+
+button{
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+button.setDone{
+    background-color: greenyellow;
+}
+
+button.setUndone{
+    background-color: red;
+}
+
+h1{
+    text-align: center;
+}
+
+li{
+    margin-bottom: 1em;
+}
+
+li.done{
+    text-decoration: line-through;
+}
